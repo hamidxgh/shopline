@@ -1,0 +1,46 @@
+{
+  "realm": "shopline",
+  "enabled": true,
+  "sslRequired": "none",
+  "registrationAllowed": false,
+  "verifyEmail": false,
+  "requiredActions": [
+    {
+      "alias": "VERIFY_PROFILE",
+      "name": "Verify Profile",
+      "providerId": "VERIFY_PROFILE",
+      "enabled": false,
+      "defaultAction": false,
+      "priority": 90
+    }
+  ],
+  "clients": [
+    {
+      "clientId": "shopline-api",
+      "enabled": true,
+      "publicClient": true,
+      "directAccessGrantsEnabled": true,
+      "standardFlowEnabled": true,
+      "redirectUris": ["*"],
+      "webOrigins": ["*"]
+    }
+  ],
+  "users": [
+    {
+      "username": "shopper",
+      "email": "shopper@shopline.local",
+      "enabled": true,
+      "emailVerified": true,
+      "firstName": "Shop",
+      "lastName": "Per",
+      "requiredActions": [],
+      "credentials": [
+        {
+          "type": "password",
+          "value": "shopper",
+          "temporary": false
+        }
+      ]
+    }
+  ]
+}

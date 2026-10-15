@@ -1,0 +1,7 @@
+.:53 {
+    rewrite name exact db.shopline.local postgres
+    rewrite name exact cache.shopline.local redis
+    forward . 127.0.0.11
+    log
+    errors
+}

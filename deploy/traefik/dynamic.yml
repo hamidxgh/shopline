@@ -1,0 +1,28 @@
+http:
+  routers:
+    shopline:
+      rule: "PathPrefix(`/`)"
+      entryPoints: [web]
+      service: shopline
+      middlewares: [rateLimit]
+
+  middlewares:
+    rateLimit:
+      rateLimit:
+        average: 10
+        burst: 20
+        sourceCriterion:
+          ipStrategy:
+            depth: 1
+
+  services:
+    shopline:
+      loadBalancer:
+        servers:
+          - url: "http://01-shopline-app-1:8080"
+          - url: "http://01-shopline-app-2:8080"
+          - url: "http://01-shopline-app-3:8080"
+        healthCheck:
+          path: /healthz
+          interval: 5s
+          timeout: 2s
