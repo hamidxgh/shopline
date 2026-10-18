@@ -16,4 +16,4 @@ Ship **one Go binary** (`cmd/shopline`) and **many real infrastructure container
 
 - Pros: one mental model; `make smoke` proves the whole path; honest for early/mid product architecture interviews.
 - Cons: not a microservices orchestration demo; no per-service deploy independent of the API.
-- Follow-up: extract `internal/` packages by domain; add circuit breakers (Phase 9); optional k8s later.
+- Follow-up: extract `internal/` packages by domain; add circuit breakers on dependency edges; optional k8s later.
